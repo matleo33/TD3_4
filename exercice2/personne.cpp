@@ -4,8 +4,9 @@
 
 
 Personne::Personne()
-	:m_prenom(""), m_nom(""), m_age(0)
 {
+	m_prenom = NULL;
+	m_nom = NULL;
 }
 
 Personne::Personne(unsigned short age, char * nom, char * prenom)
@@ -20,6 +21,14 @@ Personne::Personne(Personne& p)
 	m_age = p.obtenirAge();
 	strcpy(m_nom, p.obtenirNom());
 	strcpy(m_prenom, p.obtenirPrenom());
+}
+
+Personne::~Personne()
+{
+	if(m_nom != NULL)
+		delete []m_nom;
+	if(m_prenom != NULL)
+		delete []m_prenom;
 }
 
 void Personne::affiche() const {
