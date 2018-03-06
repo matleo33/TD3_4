@@ -6,9 +6,9 @@ private:
 public:
 	Personne();
 	Personne(unsigned short age, char* m_nom, char* m_prenom);
-	Personne(Personne& p);
+	Personne(const Personne& p);
 	void affiche() const;
 	unsigned short obtenirAge() const;
-	char * obtenirPrenom();
-	char * obtenirNom();
+	char * obtenirPrenom() const;
+	char * obtenirNom() const;
 };

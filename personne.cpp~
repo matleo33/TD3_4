@@ -1,6 +1,5 @@
 #include "personne.h"
 #include <iostream>
-#include <string.h>
 
 
 Personne::Personne()
@@ -15,14 +14,14 @@ Personne::Personne(unsigned short age, char * nom, char * prenom)
 	strcpy(m_prenom, prenom);
 }
 
-Personne::Personne(Personne& p)
+Personne::Personne(const Personne& p)
 {
 	m_age = p.obtenirAge();
 	strcpy(m_nom, p.obtenirNom());
 	strcpy(m_prenom, p.obtenirPrenom());
 }
 
-void Personne::affiche() const {
+void Personne::affiche() {
 	std::cout << "Bonjour, je m'appelle " << m_prenom << " " << m_nom << std::endl;
 	std::cout << "J'ai" << m_age << " ans." << std::endl;
 }
@@ -33,12 +32,12 @@ unsigned short Personne::obtenirAge() const
 	return m_age;
 }
 
-char * Personne::obtenirPrenom()
+char * Personne::obtenirPrenom() const
 {
 	return m_prenom;
 }
 
-char * Personne::obtenirNom()
+char * Personne::obtenirNom() const
 {
 	return m_nom;
 }
