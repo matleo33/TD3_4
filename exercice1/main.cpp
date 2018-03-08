@@ -3,10 +3,12 @@
 
 #include "personne.h"
 
+#define taille 5
+
 using namespace std;
 
 int main () {
-	Personne personnes[5];
+	Personne personnes[taille];
 	personnes[0] = Personne();
 	char nom[] = "Bresil";
 	char prenom[] = "Michel";
@@ -15,7 +17,7 @@ int main () {
 	char nom2[] = "Borlo";
 	char prenom2[] = "Jean-Louis";
 	personnes[2] = Personne(42, nom2, prenom2);
- 	for(int i=0; i < 5; ++i)
+ 	for(int i=0; i < taille; ++i)
 	{
 		personnes[i].affiche();
 	}
