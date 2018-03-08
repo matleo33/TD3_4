@@ -1,25 +1,16 @@
-#include <iostream>
-#include <string.h>
+#include "personne.hpp"
 
-#include "personne.h"
+int main(){
 
-#define taille 5
+  Personne p[20];
+  char nom[20] = "berwit";
+  char prenom[20] = "yonnel";
+  Personne pers1(prenom,nom, 20);
+  p[0] = pers1;
 
-using namespace std;
-
-int main () {
-	Personne personnes[taille];
-	personnes[0] = Personne();
-	char nom[] = "Bresil";
-	char prenom[] = "Michel";
-	Personne personne (25, nom, prenom);
-	personnes[1] = personne;
-	char nom2[] = "Borlo";
-	char prenom2[] = "Jean-Louis";
-	personnes[2] = Personne(42, nom2, prenom2);
- 	for(int i=0; i < taille; ++i)
-	{
-		personnes[i].affiche();
-	}
+  for(int i=0;i<1;i++)
+  {
+    p[i].affiche();
+  }
   return 0;
 }
